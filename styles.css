@@ -1,0 +1,910 @@
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Estilos Generales ---------------------------*/
+/*--------------------------------------------------------------------------*/
+*, 
+*::before,
+*::after
+{
+  box-sizing: border-box;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+main 
+{
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+
+section 
+{
+  transform-style: preserve-3d;
+  position: relative;
+  /*height: 100vh;*/
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+}
+
+section h1
+{
+  text-align: center;
+  font-size: 4rem;
+  font-family: sans-serif;
+}
+
+section.parallax {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*--------------------------------------------------------------------------*/
+/*------------------------------ Fuentes  ----------------------------------*/
+/*--------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'FleurDeLeah';
+  src: url('./fonts/FleurDeLeah-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fleur-title {
+  font-family: 'FleurDeLeah', cursive, sans-serif;
+  font-size: 8vw;           /* Escalable según el ancho de la pantalla */
+  letter-spacing: 1px;
+  color: #FFF;
+  font-weight: normal;
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+@font-face {
+  font-family: 'Updock';
+  src: url('./fonts/Updock-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.updock-title {
+  font-family: 'Updock', cursive, sans-serif;
+  font-size: 6vw;
+  letter-spacing: 1px; /* menos espacio entre letras */
+  color: #FFF;
+  font-weight: normal; /* asegura que no sea bold */
+}
+
+@font-face {
+  font-family: 'calibril';
+  src: url('./fonts/calibril.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+.calibril-title {
+  font-family: 'calibril', cursive, sans-serif;
+  font-size: 6vw;
+  letter-spacing: 1px; /* menos espacio entre letras */
+  color: #FFF;
+  font-weight: normal; /* asegura que no sea bold */
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Estilos Background no parallax --------------*/
+/*--------------------------------------------------------------------------*/
+
+.backgroundSVG01 
+{
+  background-image: url('./assets/SVG_flores/FloresSVG_fondo_01.svg'); 
+  background-repeat: no-repeat; 
+  background-size: 100vw auto; 
+  background-position: top center;
+  background-color: transparent;
+  width: 100vw;
+}
+.backgroundSVG02 
+{
+  background-image: url('./assets/SVG_flores/FloresSVG_fondo_02.svg'); 
+  background-repeat: no-repeat; 
+  background-size: 100vw auto; 
+  background-position: top center;
+  background-color: transparent;
+  width: 100vw;
+}
+.backgroundSVG03 {
+  background-image: url('./assets/SVG_flores/FloresSVG_fondo_03.svg');
+  background-repeat: no-repeat;
+  background-size: 100vw auto;   /* Ancho variable, alto automático */
+  background-position: top center;
+  width: 100vw;                  /* Ocupa todo el ancho de la pantalla */
+  height: 300px;                 /* Altura fija, ajusta según necesites */
+}
+
+
+.fondo-svg-responsiveTop {
+  width: 100%;
+  height: 100px;
+  background-image: url('./assets/SVG_flores/Marcos_fondo_01.svg');
+  background-repeat: no-repeat;
+  background-size: 1600px auto;
+  background-position: top center;
+  display: block;
+  
+}
+
+.fondo-svg-responsiveCenter {
+  padding: 50px;
+  background-color: #567b76;
+}
+
+.fondo-svg-responsiveBottom {
+  width: 100%;
+  height: 100px;
+  background-image: url('./assets/SVG_flores/Marcos_fondo_02.svg');
+  background-repeat: no-repeat;
+  background-size: 1600px auto;
+  background-position: bottom center;
+  display: block;
+  
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Estilos Parallax ----------------------------*/
+/*--------------------------------------------------------------------------*/
+.no-parallax 
+{
+  background-color: transparent;
+  display: block;
+  z-index: 999;
+}
+
+.parallax h1 
+{
+  width: 60%;
+  
+}
+
+.parallax::after 
+{
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(2);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.bg1::after {
+  background: linear-gradient(rgba(66, 107, 100, 0.349), rgba(20, 32, 30, 0.349)), url("./assets/portada.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg2::after {
+  background: linear-gradient(rgba(66, 107, 100, 0.349), rgba(20, 32, 30, 0.349)), url("./assets/photoG1_D.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg3::after {
+  background: linear-gradient(rgba(66, 107, 100, 0.349), rgba(20, 32, 30, 0.349)), url("./assets/photoG2_D.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg4::after {
+  background: linear-gradient(rgba(66, 107, 100, 0.349), rgba(20, 32, 30, 0.349)), url("./assets/photoG3_D.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+@media screen and (min-width: 768px) 
+{
+  section h1 
+  {
+    font-size: 8rem;
+  }
+  
+  .parallax h1 
+  {
+    font-size: 4rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Flores animadas -----------------------------*/
+/*--------------------------------------------------------------------------*/
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}    
+
+.content {
+  z-index: 2;
+  text-align: center;
+}
+
+.flowers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flower {
+  position: absolute;
+  width: 40%;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.flower.enter {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.flower.exit {
+  opacity: 0;
+}
+
+/* Posiciones individuales de entrada */
+.flower-left {
+  top: 10%;
+  left: -150px;
+}
+
+.flower-right {
+  bottom: 10%;
+  right: -150px;
+}
+
+.flower-bottom {
+  bottom: -150px;
+  left: 10%;
+  transform: translateX(-50%);
+}
+.flower-top {
+  top: -150px;
+  right: 0;
+  left:auto;
+  transform: none;
+}
+
+.flower-left.enter {
+  transform: translateX(130px);
+}
+
+.flower-right.enter {
+  transform: translateX(-130px);
+}
+
+.flower-bottom.enter {
+  transform: translate(-50%, -180px);
+}
+
+.flower-top.enter {
+  top: 30px;    /* Ajusta según lo lejos que quieras que baje */
+  opacity: 1;
+}
+
+
+.flower-left.exit {
+  transform: translateX(-150px);
+}
+
+.flower-right.exit {
+  transform: translateX(150px);
+}
+
+.flower-bottom.exit {
+  transform: translate(-50%, 150px);
+}
+
+.flower-top.exit {
+  top: -150px;
+  opacity: 0;
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Portada principal ---------------------------*/
+/*--------------------------------------------------------------------------*/
+/* Portada principal */
+.portada-principal {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.portada-content {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  padding: 3rem 1rem 2rem 1rem;
+  background: rgba(0,0,0,0.18);
+  border-radius: 20px;
+}
+
+.portada-fecha {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-family: 'calibril', Arial, sans-serif;
+  opacity: 0.9;
+}
+
+.portada-nombres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.nombre.fleur-title {
+  font-size: 7rem;
+  color: #fff;
+  font-family: 'FleurDeLeah', cursive, sans-serif;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.ampersand {
+  background: #e6ede6;
+  color: #7a8c7b;
+  font-size: 4rem;
+  border-radius: 50%;
+  width: 3.5rem;
+  height:  3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Updock', cursive, sans-serif;
+  margin: 0   rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  line-height: 1;
+}
+
+.portada-separador {
+  border: none;
+  border-top: 1px solid #fff;
+  opacity: 0.5;
+  margin: 1.5rem auto 1.5rem auto;
+  width: 80%;
+}
+
+.portada-frase {
+  font-size: 1.5rem;
+  font-family: 'calibril', Arial, sans-serif;
+  color: #fff;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-style: italic;
+  position: relative;
+}
+
+.portada-frase .comilla {
+  font-size: 2.5rem;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+.portada-flecha {
+  font-size: 2.5rem;
+  color: #fff;
+  opacity: 0.7;
+  margin-top: 1.5rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(15px);}
+}
+
+@media (max-width: 600px) {
+   .portada-nombres {
+    flex-direction: column;
+    gap: 1rem;
+    white-space: normal;
+  }
+  .portada-nombres .nombre,
+  .portada-nombres .ampersand {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    text-align: center;
+  }
+  .nombre.fleur-title {
+    font-size: 5rem;
+  }
+  .portada-content {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .portada-frase {
+    font-size: 1.5rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Contador  -----------------------------------*/
+/*--------------------------------------------------------------------------*/
+
+.countdown-container {
+  background: rgba(0,0,0,0.18);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+  margin: 0 auto;
+  position: relative;
+  color: #fff;
+  font-family: 'calibril', Arial, sans-serif;
+  font-style: italic;  
+}
+
+.countdown-values {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.countdown-item {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.countdown-label {
+  
+  color: #b6a77a;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------------------*/
+/*-------------- Estilos para la sección de ceremonis / Fiesta -------------*/
+/*--------------------------------------------------------------------------*/
+
+.evento-content {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: rgba(0,0,0,0.13);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.evento-icon {
+  margin-bottom: 1rem;
+}
+
+.updock-title {
+  font-family: 'FleurDeLeah', cursive, sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.evento-separador {
+  border: none;
+  border-top: 1px solid #fff;
+  opacity: 0.5;
+  margin: 1.2rem auto 1.2rem auto;
+  width: 80%;
+}
+
+.evento-info {
+  margin-bottom: 1.5rem;
+}
+
+.evento-item {
+  margin: 0.7rem 0;
+}
+
+.evento-label {
+  display: block;
+  font-family: 'FleurDeLeah', cursive, sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: normal;
+}
+
+.evento-valor {
+  display: block;
+  font-family: 'calibril', Arial, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+
+.evento-boton {
+  display: inline-block;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  padding: 0.6rem 1.5rem;
+  background: #b6a77a;
+  color: #fff;
+  border-radius: 30px;
+  font-family: 'calibril', Arial, sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.evento-boton.secundario {
+  background: #7a8c7b;
+}
+
+.evento-boton:hover {
+  background: #a4956a;
+}
+
+@media (max-width: 600px) {
+  .evento-content {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .updock-title {
+    font-size: 1.5rem;
+  }
+  .evento-valor {
+    font-size: 1.5rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*-------------- Estilos para la sección historia de amor ------------------*/
+/*--------------------------------------------------------------------------*/
+
+#story {
+  background: rgba(0,0,0,0.13);
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 3rem auto 3rem auto;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+#story h2 {
+  font-family: 'FleurDeLeah', cursive, sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+#story p {
+  font-family: 'calibril', Arial, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+#story .carousel {
+  margin: 2rem auto 2rem auto;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1.2rem 0.5rem;
+}
+
+
+
+@media (max-width: 600px) {
+  #story {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  #story h2 {
+    font-size: 4rem;
+  }
+  #story p {
+    font-size: 1.5rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Carrusel  -----------------------------*/
+/*--------------------------------------------------------------------------*/
+.carousel {
+  width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.carousel-images {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+.carousel-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+.carousel-img.active {
+  opacity: 1;
+  z-index: 2;
+}
+.carousel-thumbnails {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.thumb-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.carousel-thumb {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s, opacity 0.3s;
+}
+.carousel-thumb.active {
+  border: 2px solid #b6a77a;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------------------*/
+/*-------------------- Seccion confirmar  asistencia  ----------------------*/
+/*--------------------------------------------------------------------------*/
+/* Compactar el formulario RSVP */
+#rsvp-form.content-box {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+}
+
+#rsvp-form label,
+#rsvp-form legend {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+#rsvp-form input[type="text"],
+#rsvp-form input[type="email"],
+#rsvp-form input[type="tel"],
+#rsvp-form input[type="number"],
+#rsvp-form textarea {
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.3rem;
+  border-radius: 6px;
+}
+
+#rsvp-form textarea {
+  min-height: 40px;
+}
+
+#rsvp-form button[type="submit"] {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  margin-top: 0.7rem;
+}
+
+#rsvp-form .evento-icon {
+  margin-bottom: 0.5rem;
+}
+
+
+@media (max-width: 600px) {
+  #rsvp-form.content-box {
+    max-width: 98vw;
+    padding: 0.5rem 0.2rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Seccion mesa de regalos  --------------------*/
+/*--------------------------------------------------------------------------*/
+
+.content-box {
+  background: rgba(0,0,0,0.13);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  color: #fff;
+  font-family: 'calibril', Arial, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.gift-text {
+  font-family: 'FleurDeLeah', cursive, sans-serif;
+  font-size: 3rem;
+  color: #b6a77a;
+  margin: 1.2rem 0;
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Seccion de Instagram  -----------------------*/
+/*--------------------------------------------------------------------------*/
+
+.instagram-section {
+  background: none;
+  padding: 0;
+}
+
+.instagram-box {
+  background: rgba(0,0,0,0.18);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  color: #fff;
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.instagram-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.instagram-subtitle {
+  font-family: 'calibril', Arial, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.instagram-icon {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.instagram-hashtag {
+  font-size: 1.5rem;
+  font-family: 'calibril', Arial, sans-serif;
+  margin: 1rem 0 2rem 0;
+  color: #fff;
+}
+
+.instagram-btn {
+  display: inline-block;
+  background: #e6ede6;
+  color: #7a8c7b;
+  font-family: 'calibril', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+}
+
+.instagram-btn:hover {
+  background: #b6a77a;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  
+  .instagram-hashtag {
+    font-size: 1.5rem;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------- Seccion de playlist  -------------------------------------*/
+/*--------------------------------------------------------------------------*/
+.playlist-table-container {
+  max-height: 18rem; /* Ajusta según el alto de 4 filas */
+  overflow-y: auto;
+  margin: 0 auto 1rem auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.playlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+}
+
+.playlist-table th, .playlist-table td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  background: transparent;
+}
+
+.playlist-table th {
+  background: #7a8c7b;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.playlist-table tr:nth-child(even) {
+  background: rgba(255,255,255,0.06);
+}
+
+.playlist-table tr:nth-child(odd) {
+  background: rgba(0,0,0,0.06);
+}
+
+.playlist-table a {
+  color: #b6a77a;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.playlist-table a:hover {
+  color: #fff;
+  text-decoration: none;
+}
