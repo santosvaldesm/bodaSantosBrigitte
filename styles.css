@@ -900,6 +900,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   min-width: 300px;
+  font-size: 0.9rem; /* O el tamaño que prefieras, por ejemplo 0.9rem o 14px */
 }
 
 .playlist-table th, .playlist-table td {
