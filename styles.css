@@ -733,6 +733,25 @@ body {
   z-index: 999;
 }
 
+.carousel p,
+.carousel-text {
+  font-family: 'calibril', Arial, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .carousel p,
+  .carousel-text {
+    font-size: 1.3rem;
+  }
+}
+
 /*--------------------------------------------------------------------------*/
 /*-------------------- Seccion confirmar  asistencia  ----------------------*/
 /*--------------------------------------------------------------------------*/
