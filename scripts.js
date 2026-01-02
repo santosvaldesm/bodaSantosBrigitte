@@ -37,7 +37,7 @@ function updateCountdown() {
   const distance = countdownDate - now;
 
   if (distance < 0) {
-    countdownEl.innerHTML = "¡Llegó el gran día!";
+    countdownEl.innerHTML = "¡Llegó el gran día--!";
     return;
   }
 

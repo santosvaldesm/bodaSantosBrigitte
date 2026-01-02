@@ -14,6 +14,11 @@
   padding: 0;
 }
 
+a, a:visited, a:focus, a:hover, a:active {
+  color: #0066cc !important;
+  font-weight: 700;
+}
+
 main 
 {
   height: 100vh;
@@ -195,7 +200,7 @@ section.parallax {
 }
 
 .bg1::after {
-  background: linear-gradient(rgba(66, 107, 100, 0.349), rgba(20, 32, 30, 0.349)), url("./assets/portada.jpg");
+  background: linear-gradient(rgba(66, 107, 100, 0.8), rgba(20, 32, 30, 0.8)), url("./assets/portada.jpg");
   background-size: cover;
   background-position: center center;
 }
